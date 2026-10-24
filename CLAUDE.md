@@ -13,7 +13,7 @@ Entidade da cidade GTA7 Lab: atendimento e gestão de um salão (serviços esté
 - Comissão = preco × comissaoPct dos agendamentos concluídos (ainda não exposta).
 
 ## MCP tools (`POST /api/mcp`)
-- `listar_servicos(categoria?, precoMax?)`
+- `listar_servicos(categoria?, precoMax?)` e o alias `search_services` (o Core só chama sozinho tools tipo `search_*` sem argumento obrigatório)
 - `consultar_horarios(data, servicoId)` → horários livres (passo de 30 min)
 - `agendar_horario(cliente, servicoId, data, hora, telefone?)`
 

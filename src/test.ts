@@ -9,7 +9,8 @@ const call = (name: string, args: object) =>
 
 try {
   const lista = (handleMcp({ jsonrpc: "2.0", id: 1, method: "tools/list" }) as any).result.tools;
-  assert.equal(lista.length, 3);
+  assert.equal(lista.length, 4);
+  assert.equal(call("search_services", {}).structuredContent.servicos.length, 8);
 
   const unhas = call("listar_servicos", { categoria: "unhas" }).structuredContent.servicos;
   assert.equal(unhas.length, 2);

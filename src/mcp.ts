@@ -14,6 +14,19 @@ const tools = [
     },
   },
   {
+    // Nome em inglês para o Core da GTA City reconhecer como vitrine (busca sem argumento obrigatório).
+    name: "search_services",
+    description: "Search the beauty salon services (hair, nails, aesthetics) with price (R$), duration and haircut examples. All filters optional.",
+    inputSchema: {
+      type: "object",
+      properties: {
+        categoria: { type: "string", enum: ["cabelo", "unhas", "estetica"] },
+        precoMax: { type: "number", description: "Preço máximo em R$" },
+      },
+    },
+    annotations: { readOnlyHint: true },
+  },
+  {
     name: "consultar_horarios",
     description: "Retorna os horários livres de um serviço em uma data.",
     inputSchema: {
@@ -44,7 +57,8 @@ const tools = [
 
 function chamar(nome: string, a: Record<string, any>): object {
   switch (nome) {
-    case "listar_servicos": return listarServicos(a.categoria, a.precoMax);
+    case "listar_servicos":
+    case "search_services": return listarServicos(a.categoria, a.precoMax);
     case "consultar_horarios": return consultarHorarios(a.data, a.servicoId);
     case "agendar_horario": return agendarHorario(a.cliente, a.servicoId, a.data, a.hora, a.telefone);
     default: throw new Error(`Tool desconhecida: ${nome}`);
