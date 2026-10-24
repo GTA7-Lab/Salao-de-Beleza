@@ -28,6 +28,6 @@ Entidade da cidade GTA7 Lab: atendimento e gestão de um salão (serviços esté
 
 ## Status / próxima tarefa
 - Funciona localmente (`npm test`, `npm run dev`) e em https://gta-7-lab.vercel.app (push no `main` republica).
-- GitHub: https://github.com/Xaxim80/GTA-7-Lab
+- GitHub: https://github.com/GTA7-Lab/Salao-de-Beleza
 - Core (GTA City): MCP em https://gta7-lab-city.vercel.app/mcp. Entidade `salao-de-beleza` (tag `activity`) aprovada na cidade; `orchestrate` já chama `search_services`.
 - Próximo: nenhuma tarefa pendente na primeira versão.
