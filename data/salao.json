@@ -1,0 +1,32 @@
+{
+  "horario": { "abre": "09:00", "fecha": "19:00", "diasSemana": [2, 3, 4, 5, 6] },
+  "servicos": [
+    { "id": "corte-fem", "nome": "Corte feminino", "categoria": "cabelo", "duracaoMin": 60, "preco": 90, "comissaoPct": 40 },
+    { "id": "corte-masc", "nome": "Corte masculino", "categoria": "cabelo", "duracaoMin": 30, "preco": 50, "comissaoPct": 40 },
+    { "id": "escova", "nome": "Escova", "categoria": "cabelo", "duracaoMin": 45, "preco": 60, "comissaoPct": 40 },
+    { "id": "coloracao", "nome": "Coloração", "categoria": "cabelo", "duracaoMin": 120, "preco": 220, "comissaoPct": 35 },
+    { "id": "manicure", "nome": "Manicure", "categoria": "unhas", "duracaoMin": 45, "preco": 40, "comissaoPct": 50 },
+    { "id": "pedicure", "nome": "Pedicure", "categoria": "unhas", "duracaoMin": 45, "preco": 45, "comissaoPct": 50 },
+    { "id": "design-sobrancelha", "nome": "Design de sobrancelha", "categoria": "estetica", "duracaoMin": 30, "preco": 55, "comissaoPct": 45 },
+    { "id": "limpeza-pele", "nome": "Limpeza de pele", "categoria": "estetica", "duracaoMin": 60, "preco": 150, "comissaoPct": 40 }
+  ],
+  "profissionais": [
+    { "id": "ana", "nome": "Ana Souza", "categorias": ["cabelo"] },
+    { "id": "bruno", "nome": "Bruno Lima", "categorias": ["cabelo"] },
+    { "id": "carla", "nome": "Carla Mendes", "categorias": ["unhas", "estetica"] }
+  ],
+  "clientes": [
+    { "id": "c1", "nome": "Mariana Alves", "telefone": "11 91234-5678" },
+    { "id": "c2", "nome": "Pedro Santos", "telefone": "11 99876-5432" },
+    { "id": "c3", "nome": "Juliana Costa", "telefone": "11 98765-4321" }
+  ],
+  "agendamentos": [
+    { "id": "a1", "clienteId": "c1", "servicoId": "corte-fem", "profissionalId": "ana", "data": "2026-10-27", "hora": "10:00", "status": "agendado" },
+    { "id": "a2", "clienteId": "c2", "servicoId": "corte-masc", "profissionalId": "bruno", "data": "2026-10-27", "hora": "10:00", "status": "agendado" },
+    { "id": "a3", "clienteId": "c3", "servicoId": "manicure", "profissionalId": "carla", "data": "2026-10-23", "hora": "14:00", "status": "concluido" }
+  ],
+  "caixa": [
+    { "id": "m1", "data": "2026-10-23", "tipo": "entrada", "valor": 40, "descricao": "Manicure - Juliana Costa", "agendamentoId": "a3" },
+    { "id": "m2", "data": "2026-10-23", "tipo": "saida", "valor": 25, "descricao": "Compra de esmaltes" }
+  ]
+}

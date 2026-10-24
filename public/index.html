@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Salão de Beleza</title>
+  <style>body{font-family:system-ui,sans-serif;max-width:640px;margin:2rem auto;padding:0 1rem}td,th{padding:.3rem .6rem;text-align:left}</style>
+</head>
+<body>
+  <h1>Salão de Beleza</h1>
+  <p>Entidade da GTA7 Lab. MCP em <code>/api/mcp</code>, manifesto em <a href="manifest.json">manifest.json</a>.</p>
+  <table><thead><tr><th>Serviço</th><th>Categoria</th><th>Duração</th><th>Preço</th></tr></thead><tbody id="lista"></tbody></table>
+  <script>
+    // Busca os dados pela própria MCP tool listar_servicos.
+    fetch("/api/mcp", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ jsonrpc: "2.0", id: 1, method: "tools/call", params: { name: "listar_servicos", arguments: {} } })
+    })
+      .then((r) => r.json())
+      .then((r) => {
+        document.getElementById("lista").innerHTML = r.result.structuredContent.servicos
+          .map((s) => `<tr><td>${s.nome}</td><td>${s.categoria}</td><td>${s.duracaoMin} min</td><td>R$ ${s.preco}</td></tr>`)
+          .join("");
+      });
+  </script>
+</body>
+</html>
