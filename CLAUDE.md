@@ -4,7 +4,8 @@ Entidade da cidade GTA7 Lab: atendimento e gestão de um salão (serviços esté
 
 ## JSON (`data/salao.json`)
 - `horario`: abre, fecha, diasSemana (0=dom; 2-6 = ter-sáb)
-- `servicos`: id, nome, categoria (cabelo|unhas|estetica), duracaoMin, preco, comissaoPct
+- `servicos`: id, nome, categoria (cabelo|unhas|estetica), duracaoMin, preco, comissaoPct, exemplos? (nome, descricao, imagem, credito, fonte)
+- Fotos dos exemplos em `public/img/`, de licença livre (Wikimedia Commons), com crédito no JSON.
 - `profissionais`: id, nome, categorias
 - `clientes`: id, nome, telefone
 - `agendamentos`: id, clienteId, servicoId, profissionalId, data (AAAA-MM-DD), hora (HH:MM), status (agendado|concluido|cancelado)

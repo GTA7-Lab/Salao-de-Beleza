@@ -4,12 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Salão de Beleza</title>
-  <style>body{font-family:system-ui,sans-serif;max-width:640px;margin:2rem auto;padding:0 1rem}td,th{padding:.3rem .6rem;text-align:left}</style>
+  <style>:root{color-scheme:light dark}body{font-family:system-ui,sans-serif;max-width:640px;margin:2rem auto;padding:0 1rem}td,th{padding:.3rem .6rem;text-align:left}
+    #exemplos{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:1rem}figure{margin:0}img{width:100%;aspect-ratio:3/4;object-fit:cover;border-radius:6px}figcaption small{opacity:.7}</style>
 </head>
 <body>
   <h1>Salão de Beleza</h1>
   <p>Entidade da GTA7 Lab. MCP em <code>/api/mcp</code>, manifesto em <a href="manifest.json">manifest.json</a>.</p>
   <table><thead><tr><th>Serviço</th><th>Categoria</th><th>Duração</th><th>Preço</th></tr></thead><tbody id="lista"></tbody></table>
+  <h2>Cortes masculinos populares</h2>
+  <div id="exemplos"></div>
   <script>
     // Busca os dados pela própria MCP tool listar_servicos.
     fetch("/api/mcp", {
@@ -19,8 +22,13 @@
     })
       .then((r) => r.json())
       .then((r) => {
-        document.getElementById("lista").innerHTML = r.result.structuredContent.servicos
+        const servicos = r.result.structuredContent.servicos;
+        document.getElementById("lista").innerHTML = servicos
           .map((s) => `<tr><td>${s.nome}</td><td>${s.categoria}</td><td>${s.duracaoMin} min</td><td>R$ ${s.preco}</td></tr>`)
+          .join("");
+        document.getElementById("exemplos").innerHTML = servicos.flatMap((s) => s.exemplos ?? [])
+          .map((e) => `<figure><img src="${new URL(e.imagem).pathname}" alt="${e.nome}"><figcaption><b>${e.nome}</b><br>${e.descricao}<br>` +
+            `<small><a href="${e.fonte}">Foto</a>: ${e.credito}</small></figcaption></figure>`)
           .join("");
       });
   </script>

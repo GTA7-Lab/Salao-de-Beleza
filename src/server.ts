@@ -5,7 +5,7 @@ import { join } from "node:path";
 import { GET, POST } from "../api/mcp.ts";
 
 const porta = Number(process.env.PORT ?? 3000);
-const tipos: Record<string, string> = { ".html": "text/html; charset=utf-8", ".json": "application/json" };
+const tipos: Record<string, string> = { ".html": "text/html; charset=utf-8", ".json": "application/json", ".jpg": "image/jpeg" };
 
 createServer(async (req, res) => {
   const url = new URL(req.url ?? "/", `http://localhost:${porta}`);

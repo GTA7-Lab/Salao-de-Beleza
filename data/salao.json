@@ -2,7 +2,23 @@
   "horario": { "abre": "09:00", "fecha": "19:00", "diasSemana": [2, 3, 4, 5, 6] },
   "servicos": [
     { "id": "corte-fem", "nome": "Corte feminino", "categoria": "cabelo", "duracaoMin": 60, "preco": 90, "comissaoPct": 40 },
-    { "id": "corte-masc", "nome": "Corte masculino", "categoria": "cabelo", "duracaoMin": 30, "preco": 50, "comissaoPct": 40 },
+    {
+      "id": "corte-masc", "nome": "Corte masculino", "categoria": "cabelo", "duracaoMin": 30, "preco": 50, "comissaoPct": 40,
+      "exemplos": [
+        { "nome": "Degradê", "descricao": "Laterais e nuca bem curtas, clareando aos poucos até a pele; topo curto.",
+          "imagem": "https://gta-7-lab.vercel.app/img/corte-fade.jpg",
+          "credito": "Truth678, CC BY-SA 4.0, via Wikimedia Commons", "fonte": "https://commons.wikimedia.org/wiki/File:Fade_Hair_Cut.jpg" },
+        { "nome": "Social", "descricao": "Clássico e discreto: laterais curtas na tesoura ou máquina e topo um pouco maior.",
+          "imagem": "https://gta-7-lab.vercel.app/img/corte-social.jpg",
+          "credito": "Cpl. Steven H. Posy (USMC), domínio público, via Wikimedia Commons", "fonte": "https://commons.wikimedia.org/wiki/File:Crew_Cut,_Semi_Short_Taper.jpg" },
+        { "nome": "Disfarçado na máquina", "descricao": "Topo na máquina e laterais disfarçadas até a pele (navalhado).",
+          "imagem": "https://gta-7-lab.vercel.app/img/corte-buzz.jpg",
+          "credito": "Absock, CC0, via Wikimedia Commons", "fonte": "https://commons.wikimedia.org/wiki/File:Photo_of_buzz_cut.jpg" },
+        { "nome": "Mullet", "descricao": "Curto na frente e nas laterais, comprido atrás. Voltou com força entre os jovens.",
+          "imagem": "https://gta-7-lab.vercel.app/img/corte-mullet.jpg",
+          "credito": "Wordzandguitar, CC BY-SA 4.0, via Wikimedia Commons", "fonte": "https://commons.wikimedia.org/wiki/File:Modern_Mullet.jpg" }
+      ]
+    },
     { "id": "escova", "nome": "Escova", "categoria": "cabelo", "duracaoMin": 45, "preco": 60, "comissaoPct": 40 },
     { "id": "coloracao", "nome": "Coloração", "categoria": "cabelo", "duracaoMin": 120, "preco": 220, "comissaoPct": 35 },
     { "id": "manicure", "nome": "Manicure", "categoria": "unhas", "duracaoMin": 45, "preco": 40, "comissaoPct": 50 },

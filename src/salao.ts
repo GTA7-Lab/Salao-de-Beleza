@@ -1,7 +1,10 @@
 import { readFileSync, writeFileSync } from "node:fs";
 import { join } from "node:path";
 
-export type Servico = { id: string; nome: string; categoria: string; duracaoMin: number; preco: number; comissaoPct: number };
+export type Exemplo = { nome: string; descricao: string; imagem: string; credito: string; fonte: string };
+export type Servico = {
+  id: string; nome: string; categoria: string; duracaoMin: number; preco: number; comissaoPct: number; exemplos?: Exemplo[];
+};
 export type Profissional = { id: string; nome: string; categorias: string[] };
 export type Cliente = { id: string; nome: string; telefone?: string };
 export type Agendamento = {
