@@ -2,6 +2,6 @@
   "id": "salao-de-beleza",
   "name": "Salão de Beleza",
   "description": "Serviços estéticos da GTA7 Lab: consulta de serviços e valores, horários livres e agendamento",
-  "endpoint": "/api/mcp",
+  "endpoint": "https://gta-7-lab.vercel.app/api/mcp",
   "tools": ["listar_servicos", "consultar_horarios", "agendar_horario"]
 }

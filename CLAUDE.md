@@ -21,8 +21,11 @@ Entidade da cidade GTA7 Lab: atendimento e gestão de um salão (serviços esté
 - `src/server.ts` servidor local · `src/test.ts` testes · `public/` página e `manifest.json`
 
 ## Decisões
-- Sem dependências: Node ≥22.18 roda .ts direto (type stripping); MCP implementado à mão (Streamable HTTP, só respostas JSON, sem SSE).
+- Sem dependências de runtime: Node ≥22.18 roda .ts direto (type stripping); MCP implementado à mão (Streamable HTTP, só respostas JSON, sem SSE).
+- Imports com `.ts`; `rewriteRelativeImportExtensions` (TypeScript 5.9 em devDependencies) os troca por `.js` no build da Vercel.
 - Na Vercel o disco é somente leitura: agendamentos ficam em memória (`persistido: false`).
 
 ## Status / próxima tarefa
-- Código escrito. Próximo: instalar Node e Git, rodar `npm test` e `npm run dev`, depois GitHub e Vercel.
+- Funciona localmente (`npm test`, `npm run dev`) e em https://gta-7-lab.vercel.app (push no `main` republica).
+- GitHub: https://github.com/Xaxim80/GTA-7-Lab
+- Próximo: registrar `public/manifest.json` no Core Orchestrator.
